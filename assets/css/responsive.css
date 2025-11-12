@@ -1,0 +1,224 @@
+/* ============================================
+   RESPONSIVE STYLES
+   Mobile-First Approach
+   ============================================ */
+
+/* ===== EXTRA LARGE DEVICES (Large Desktops, 1200px and up) ===== */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* ===== LARGE DEVICES (Desktops, 992px and up) ===== */
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* ===== MEDIUM DEVICES (Tablets, 768px and up) ===== */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== SMALL DEVICES (Landscape Phones, 576px and up) ===== */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+/* ===== EXTRA SMALL DEVICES (Portrait Phones, less than 576px) ===== */
+@media (max-width: 575.98px) {
+    /* Typography */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    
+    /* Hero Section */
+    .hero-section {
+        padding: 100px 0 60px;
+        min-height: auto;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    /* Navbar */
+    .navbar {
+        padding: 0.75rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem !important;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title h2 {
+        font-size: 1.75rem;
+        letter-spacing: 1px;
+    }
+    
+    .section-title {
+        margin-bottom: 2rem;
+    }
+    
+    /* Cards */
+    .card,
+    .service-card,
+    .pricing-card {
+        padding: 1.5rem;
+    }
+    
+    /* Services Grid */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-social {
+        flex-wrap: wrap;
+    }
+    
+    /* Back to Top */
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    /* Forms */
+    .form-control {
+        padding: 10px 12px;
+    }
+    
+    /* Pricing */
+    .pricing-card.featured {
+        transform: scale(1);
+    }
+    
+    .pricing-price {
+        font-size: 2.5rem;
+    }
+    
+    /* Blog */
+    .blog-image {
+        height: 200px;
+    }
+    
+    /* Utilities */
+    .mt-60 {
+        margin-top: 40px;
+    }
+    
+    .mb-60 {
+        margin-bottom: 40px;
+    }
+    
+    .py-80 {
+        padding: 60px 0;
+    }
+}
+
+/* ===== TABLET SPECIFIC (768px - 991px) ===== */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .hero-section h1 {
+        font-size: 2.75rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-title h2 {
+        font-size: 2.25rem;
+    }
+}
+
+/* ===== LANDSCAPE ORIENTATION ===== */
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero-section {
+        min-height: auto;
+        padding: 80px 0 60px;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .navbar,
+    .footer,
+    .back-to-top,
+    .preloader {
+        display: none;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ===== HIGH DPI DISPLAYS ===== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Optimize for retina displays */
+    .card,
+    .service-card,
+    .blog-card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+}
+
+/* ===== NO HOVER DEVICES (Touch Devices) ===== */
+@media (hover: none) {
+    .card:hover,
+    .service-card:hover,
+    .blog-card:hover,
+    .pricing-card:hover {
+        transform: none;
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+}
+

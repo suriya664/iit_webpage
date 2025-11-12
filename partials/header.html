@@ -1,0 +1,106 @@
+<!-- ============================================
+     HEADER / NAVBAR
+     ============================================ -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <strong>ACyberCloud</strong>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services <span class="dropdown-caret" aria-hidden="true">▼</span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                            <li><a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a></li>
+                            <li><a class="dropdown-item" href="cloud-services.html">Cloud Services</a></li>
+                            <li><a class="dropdown-item" href="ai-solutions.html">AI Solutions</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="solutions.html">Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="case-studies.html">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="nav-cta nav-cta-login" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                        <a class="nav-cta nav-cta-register" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle btn ms-2" aria-label="Toggle dark mode">
+                            <i class="ri-moon-line"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<style>
+    #servicesDropdown::after {
+        content: '' !important;
+        font-size: 0.7rem;
+        margin-left: 0.35rem;
+        display: inline-block;
+        vertical-align: middle;
+        transition: none !important;
+    }
+
+    #servicesDropdown:hover::after,
+    #servicesDropdown:focus::after,
+    #servicesDropdown.show::after,
+    #servicesDropdown[aria-expanded="true"]::after {
+        content: '▼' !important;
+        transform: none !important;
+    }
+
+    .dropdown-menu[aria-labelledby="servicesDropdown"] {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    header,
+    header * {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .navbar-nav .nav-link::after,
+    .navbar-nav .nav-link:hover::after {
+        width: 0 !important;
+    }
+
+    .navbar-nav .nav-cta,
+    .navbar-nav .nav-cta:hover {
+        box-shadow: none !important;
+        transform: none !important;
+    }
+</style>
+

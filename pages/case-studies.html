@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ACyberCloud Case Studies - Real-world success stories and results">
+    <meta name="keywords" content="case studies, success stories, cybersecurity, cloud, AI">
+    <meta property="og:title" content="Case Studies - ACyberCloud">
+    <meta property="og:description" content="Real-world success stories from our clients across industries">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Case Studies - ACyberCloud</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/icons/favicon.svg">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        :root{--primary-color:#0466c8;--primary-dark:#023e7d;--secondary-color:#64ffda;--dark-bg:#0a192f;--dark-blue:#172a45;--light-bg:#f8f9fa;--text-dark:#2d3748;--text-light:#718096;--white:#ffffff;--transition:all .3s ease}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:var(--text-dark);overflow-x:hidden}
+        .preloader{position:fixed;inset:0;background:var(--dark-bg);display:flex;justify-content:center;align-items:center;z-index:9999;transition:opacity .5s,visibility .5s}
+        .preloader.hidden{opacity:0;visibility:hidden}
+        .preloader-spinner{width:50px;height:50px;border:4px solid rgba(100,255,218,.3);border-top:4px solid var(--secondary-color);border-radius:50%;animation:spin 1s linear infinite}
+        @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+        .navbar{background:var(--white);padding:1rem 0;box-shadow:0 2px 10px rgba(0,0,0,.1);position:sticky;top:0;z-index:1000;transition:var(--transition)}
+        .navbar.scrolled{padding:.5rem 0;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+        .navbar-brand{font-size:1.5rem;font-weight:700;color:var(--primary-color)!important;letter-spacing:1px}
+        .nav-link{color:var(--text-dark)!important;font-weight:500;padding:.5rem 1rem!important;transition:none !important;position:relative;text-decoration:none !important;white-space:nowrap}
+        .nav-link:hover,.nav-link.active{color:var(--primary-color)!important}
+        .nav-link::after{content:none !important;display:none !important}
+        .dropdown-caret{display:inline-block;margin-left:.35rem;font-size:.7rem;opacity:0;transition:none !important;vertical-align:middle}
+        .nav-item.dropdown:hover .dropdown-caret,
+        .nav-item.dropdown:focus-within .dropdown-caret,
+        .nav-item.dropdown .nav-link.show .dropdown-caret{opacity:1}
+        .navbar-nav .nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:.55rem 1.5rem;border-radius:999px;font-weight:600;text-transform:none;letter-spacing:0;transition:var(--transition);border:2px solid transparent}
+        .navbar-nav .nav-cta-login{background:transparent;border-color:var(--primary-color);color:var(--primary-color)}
+        .navbar-nav .nav-cta-login:hover{background:var(--primary-color);color:var(--white);box-shadow:0 6px 18px rgba(4,102,200,.25)}
+        .navbar-nav .nav-cta-register{background:var(--primary-color);border-color:var(--primary-color);color:var(--white);box-shadow:0 10px 25px rgba(4,102,200,.25)}
+        .navbar-nav .nav-cta-register:hover{background:#0353a4;border-color:#0353a4;color:var(--white);box-shadow:0 12px 30px rgba(4,102,200,.3)}
+        @media(max-width:991.98px){
+            .navbar-nav .nav-cta{width:100%}
+            .navbar-nav .nav-item + .nav-item .nav-cta{margin-top:.75rem}
+        }
+        
+        .hero-section{min-height:500px;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(135deg,rgba(10,25,47,.9) 0%,rgba(4,102,200,.9) 100%),url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');background-size:cover;background-position:center;background-attachment:fixed;color:var(--white);text-align:center;padding:80px 20px;position:relative;overflow:hidden}
+        .hero-section::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(100,255,218,.1) 0%,transparent 50%);animation:pulse 4s ease-in-out infinite}
+        @keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+        .hero-section h1{font-size:3.5rem;font-weight:700;margin-bottom:1.5rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+        .hero-section p{font-size:1.25rem;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.8;display:inline-block;white-space:nowrap}
+        .section{padding:80px 0}
+        .blog-card{background:var(--white);border:1px solid #e2e8f0;border-radius:12px;box-shadow:0 3px 15px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column;height:100%}
+        .blog-image{width:100%;height:auto;display:block}
+        .blog-content{padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:1 1 auto;width:100%}
+        .blog-meta{color:var(--text-light);margin-bottom:10px}
+        .blog-title{font-size:1.3rem;font-weight:700;color:var(--text-dark);margin-bottom:12px;text-align:center}
+        .blog-excerpt{color:var(--text-light);line-height:1.7;text-align:justify}
+        p { text-align: justify; }
+        .blog-content .btn{margin-top:auto;align-self:center}
+        .footer{background:var(--dark-blue);color:var(--white);padding:60px 0 20px}
+        .footer h5{font-size:1.3rem;font-weight:700;margin-bottom:25px;color:var(--secondary-color)}
+        .footer p{color:#cbd5e0;line-height:1.8}
+        .footer-social{display:flex;gap:12px;margin-top:20px}
+        .footer-social a{width:40px;height:40px;background:transparent;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:var(--transition);text-decoration:none;font-size:1.5rem}
+        .footer-social a[aria-label="Facebook"]{color:#1877F2}
+        .footer-social a[aria-label="Twitter"]{color:#1DA1F2}
+        .footer-social a[aria-label="LinkedIn"]{color:#0077B5}
+        .footer-social a[aria-label="Instagram"]{color:#E4405F}
+        .footer-social a[aria-label="GitHub"]{color:#181717}
+        .footer-social a:hover{transform:translateY(-3px) scale(1.1);opacity:0.8}
+        .footer-links{list-style:none;padding:0}
+        .footer-links li{margin-bottom:12px}
+        .footer-links a{color:#cbd5e0;text-decoration:none;transition:var(--transition);display:inline-flex;align-items:center;gap:8px}
+        .footer-links a:hover{color:var(--secondary-color);padding-left:5px}
+        .footer-links i{margin-right:8px;color:var(--secondary-color)}
+        .footer-bottom{margin-top:40px;padding-top:25px;border-top:1px solid rgba(255,255,255,.1)}
+        .footer-bottom p{margin:0;color:#cbd5e0}
+        .footer-bottom a{color:#cbd5e0;text-decoration:none;transition:var(--transition)}
+        .footer-bottom a:hover{color:var(--secondary-color)}
+        .back-to-top{position:fixed;bottom:30px;right:30px;width:50px;height:50px;background:var(--primary-color);color:#fff;border:none;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;font-size:1.5rem;box-shadow:0 4px 15px rgba(4,102,200,.4);transition:var(--transition);z-index:999}
+        .back-to-top.show{display:flex}
+        .back-to-top:hover{background:var(--primary-dark);transform:translateY(-5px)}
+        
+        @media(max-width:768px){.hero-section h1{font-size:2.5rem}.hero-section p{font-size:1rem}.section{padding:60px 0}}
+        @media(max-width:576px){.hero-section h1{font-size:2rem}}
+        .dropdown-menu{border:none;box-shadow:0 5px 20px rgba(0,0,0,.1);border-radius:8px;margin-top:10px}
+        .dropdown-item{padding:10px 20px;transition:var(--transition)}
+        .dropdown-item:hover{background:var(--primary-color);color:#fff}
+        #servicesDropdown::after{content:'' !important;font-size:.7rem;margin-left:.35rem;display:inline-block;vertical-align:middle;transition:none !important}
+        #servicesDropdown:hover::after,
+        #servicesDropdown:focus::after,
+        #servicesDropdown.show::after,
+        #servicesDropdown[aria-expanded="true"]::after{content:'▼' !important;transform:none !important}
+        .dropdown-menu[aria-labelledby="servicesDropdown"]{animation:none !important;transition:none !important}
+        header,header *{transition:none !important;animation:none !important}
+        .navbar-nav .nav-cta,
+        .navbar-nav .nav-cta:hover{box-shadow:none !important;transform:none !important}
+        
+    </style>
+</head>
+<body>
+    <div class="preloader"><div class="preloader-spinner"></div></div>
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><strong>ACyberCloud</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services <span class="dropdown-caret" aria-hidden="true">▼</span></a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                                <li><a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a></li>
+                                <li><a class="dropdown-item" href="cloud-services.html">Cloud Services</a></li>
+                                <li><a class="dropdown-item" href="ai-solutions.html">AI Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="case-studies.html">Case-studies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3"><a class="nav-cta nav-cta-login" href="login.html">Login</a></li>
+                        <li class="nav-item mt-2 mt-lg-0 ms-lg-2"><a class="nav-cta nav-cta-register" href="register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h1>Case Studies</h1>
+                    <p>Real-world success stories from our clients across various industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Case Study 1" class="blog-image">
+                        <div class="blog-content">
+                            <div class="blog-meta">Financial Services | 2024</div>
+                            <h3 class="blog-title">Banking Security Transformation</h3>
+                            <p class="blog-excerpt">How we helped a major financial institution implement comprehensive cybersecurity measures, reducing security incidents by 95%.</p>
+                            <a href="case-studies.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Case Study 2" class="blog-image">
+                        <div class="blog-content">
+                            <div class="blog-meta">Healthcare | 2024</div>
+                            <h3 class="blog-title">Cloud Migration Success</h3>
+                            <p class="blog-excerpt">Seamless cloud migration for a healthcare provider, improving scalability and reducing infrastructure costs by 40%.</p>
+                            <a href="case-studies.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Case Study 3" class="blog-image">
+                        <div class="blog-content">
+                            <div class="blog-meta">Retail | 2024</div>
+                            <h3 class="blog-title">AI-Powered Analytics</h3>
+                            <p class="blog-excerpt">Implementation of AI solutions for a retail chain, resulting in 30% increase in sales through predictive analytics.</p>
+                            <a href="case-studies.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>ACyberCloud</h5>
+                    <p>Leading provider of cybersecurity, cloud services, and AI solutions. Protecting your digital future with cutting-edge technology.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="cloud-services.html">Cloud Services</a></li>
+                        <li><a href="ai-solutions.html">AI Solutions</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="ri-map-pin-line"></i> 123 Tech Street, Cyber City</li>
+                        <li><i class="ri-phone-line"></i> <a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+                        <li><i class="ri-mail-line"></i> <a href="mailto:info@acybercloud.com">info@acybercloud.com</a></li>
+                        <li><i class="ri-time-line"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        <p>&copy; 2025 ACyberCloud. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="privacy-policy.html" class="me-3">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top"><i class="ri-arrow-up-line"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load',function(){const p=document.querySelector('.preloader');setTimeout(()=>p.classList.add('hidden'),500)});
+        AOS.init({duration:1000,once:true,offset:100});
+        window.addEventListener('scroll',function(){const n=document.querySelector('.navbar'); if(window.scrollY>50){n.classList.add('scrolled')} else {n.classList.remove('scrolled')}});
+        const backToTopBtn=document.querySelector('.back-to-top');
+        window.addEventListener('scroll',function(){ if(window.scrollY>300){ backToTopBtn.classList.add('show')} else { backToTopBtn.classList.remove('show')}});
+        backToTopBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const href=this.getAttribute('href'); if(href!=='#'&&href!=='#navbarNav'){e.preventDefault(); const t=document.querySelector(href); if(t){t.scrollIntoView({behavior:'smooth',block:'start'})}}})});
+        const navbarCollapse=document.querySelector('.navbar-collapse');
+        document.querySelectorAll('.nav-link').forEach(link=>{link.addEventListener('click',()=>{ if(navbarCollapse.classList.contains('show')){ new bootstrap.Collapse(navbarCollapse).hide(); } })});
+        const currentLocation=location.pathname.split('/').pop()||'index.html'; document.querySelectorAll('.nav-link').forEach(l=>{ if(l.getAttribute('href')===currentLocation){ l.classList.add('active'); } });
+    </script>
+</body>
+</html>
+

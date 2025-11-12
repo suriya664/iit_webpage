@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - ACyberCloud</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/icons/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <style>
+        #servicesDropdown::after {
+            content: '' !important;
+            font-size: 0.7rem;
+            margin-left: 0.35rem;
+            display: inline-block;
+            vertical-align: middle;
+            transition: none !important;
+        }
+
+        #servicesDropdown:hover::after,
+        #servicesDropdown:focus::after,
+        #servicesDropdown.show::after,
+        #servicesDropdown[aria-expanded="true"]::after {
+            content: '▼' !important;
+            transform: none !important;
+        }
+
+        .dropdown-menu[aria-labelledby="servicesDropdown"] {
+            animation: none !important;
+            transition: none !important;
+        }
+
+        header,
+        header * {
+            transition: none !important;
+            animation: none !important;
+        }
+
+        .navbar-nav .nav-link::after,
+        .navbar-nav .nav-link:hover::after {
+            width: 0 !important;
+        }
+
+        .navbar-nav .nav-cta,
+        .navbar-nav .nav-cta:hover {
+            box-shadow: none !important;
+            transform: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader"><div class="preloader-spinner"></div></div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><strong>ACyberCloud</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                                <li><a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a></li>
+                                <li><a class="dropdown-item" href="cloud-services.html">Cloud Services</a></li>
+                                <li><a class="dropdown-item" href="ai-solutions.html">AI Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3"><a class="nav-cta nav-cta-login" href="login.html">Login</a></li>
+                        <li class="nav-item mt-2 mt-lg-0 ms-lg-2"><a class="nav-cta nav-cta-register" href="register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section" style="min-height: 60vh; padding: 120px 0 60px;">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <h1>Frequently Asked Questions</h1>
+                    <p>Find answers to common questions about our services and solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    What services does ACyberCloud provide?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    ACyberCloud provides comprehensive cybersecurity, cloud services, and AI solutions. Our services include threat protection, vulnerability assessments, cloud migration, managed cloud services, custom AI implementations, and intelligent automation solutions.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    How quickly can you respond to security incidents?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our security operations center operates 24/7 and can respond to critical security incidents within minutes. We have automated threat detection systems and a dedicated team of security experts ready to address any issues immediately.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    What cloud platforms do you support?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    We support all major cloud platforms including AWS, Microsoft Azure, Google Cloud Platform, and hybrid cloud environments. Our team is certified in multiple cloud technologies and can help you choose the best platform for your needs.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Do you provide custom AI solutions?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we develop custom AI solutions tailored to your specific business requirements. Our team works closely with you to understand your needs and develop machine learning models, intelligent automation systems, and predictive analytics solutions that deliver real business value.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What is included in your pricing plans?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our pricing plans include various levels of service depending on your needs. All plans include 24/7 support, regular security updates, and access to our customer portal. Higher-tier plans include dedicated account managers, advanced features, and priority support. Contact us for detailed pricing information.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="600">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    How do I get started?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Getting started is easy! Simply contact us through our contact form or call our sales team. We'll schedule a consultation to understand your needs and provide a customized solution proposal. Our team will guide you through the entire onboarding process.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>ACyberCloud</h5>
+                    <p>Leading provider of cybersecurity, cloud services, and AI solutions.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="cloud-services.html">Cloud Services</a></li>
+                        <li><a href="ai-solutions.html">AI Solutions</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="ri-map-pin-line"></i> 123 Tech Street, Cyber City</li>
+                        <li><i class="ri-phone-line"></i> +1 (555) 123-4567</li>
+                        <li><i class="ri-mail-line"></i> info@acybercloud.com</li>
+                        <li><i class="ri-time-line"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        <p>&copy; 2025 ACyberCloud. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="privacy-policy.html" class="me-3">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top"><i class="ri-arrow-up-line"></i></div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    
+</body>
+</html>
+

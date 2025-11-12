@@ -1,0 +1,45 @@
+/* ============================================
+   RTL (Right-to-Left) STYLES
+   ============================================ */
+
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .navbar-nav {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-buttons {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-social {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .back-to-top {
+    left: 30px;
+    right: auto;
+}
+
+[dir="rtl"] .services-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .pricing-features {
+    text-align: right;
+}
+
+[dir="rtl"] .blog-meta {
+    text-align: right;
+}
+
+@media (max-width: 575.98px) {
+    [dir="rtl"] .back-to-top {
+        left: 20px;
+        right: auto;
+    }
+}
+

@@ -1,0 +1,93 @@
+/* ============================================
+   DARK MODE STYLES
+   ============================================ */
+
+[data-theme="dark"] {
+    --text-color: #e9ecef;
+    --bg-color: #1a1d29;
+    --white: #2d3142;
+    --light-gray: #3a3f54;
+    --dark-gray: #b0b3c1;
+    --secondary-color: #ffffff;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .pricing-card,
+[data-theme="dark"] .blog-card {
+    background-color: var(--white);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .form-control {
+    background-color: var(--white);
+    border-color: var(--light-gray);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .form-control:focus {
+    background-color: var(--white);
+    border-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .accordion-item {
+    background-color: var(--white);
+    border-color: var(--light-gray);
+}
+
+[data-theme="dark"] .accordion-button {
+    background-color: var(--white);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+[data-theme="dark"] .partners-section {
+    background-color: #252836;
+}
+
+[data-theme="dark"] .preloader {
+    background-color: var(--secondary-color);
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+[data-theme="dark"] .theme-toggle {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+

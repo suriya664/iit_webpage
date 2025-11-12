@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ACyberCloud - Leading provider of cybersecurity, cloud services, and AI solutions">
+    <meta name="keywords" content="cybersecurity, cloud services, AI solutions, technology">
+    <link rel="icon" type="image/svg+xml" href="../assets/img/icons/favicon.svg">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="ACyberCloud - Cybersecurity, Cloud & AI Solutions">
+    <meta property="og:description" content="Leading provider of cybersecurity, cloud services, and AI solutions">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <title>ACyberCloud - Cybersecurity, Cloud & AI Solutions</title>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0466c8;
+            --primary-dark: #023e7d;
+            --secondary-color: #64ffda;
+            --dark-bg: #0a192f;
+            --dark-blue: #172a45;
+            --light-bg: #f8f9fa;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .preloader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(100, 255, 218, 0.3);
+            border-top: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Navigation */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: none !important;
+            position: relative;
+            text-decoration: none !important;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color) !important;
+            text-decoration: none !important;
+        }
+
+        .nav-link::after {
+            content: none !important;
+        }
+
+        .dropdown-caret {
+            display: inline-block;
+            margin-left: 0.35rem;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: none !important;
+            vertical-align: middle;
+        }
+
+        .nav-item.dropdown:hover .dropdown-caret,
+        .nav-item.dropdown:focus-within .dropdown-caret,
+        .nav-item.dropdown .nav-link.show .dropdown-caret {
+            opacity: 1;
+        }
+
+        .dropdown-menu[aria-labelledby="servicesDropdown"] {
+            animation: none !important;
+            transition: none !important;
+        }
+
+        header,
+        header * {
+            transition: none !important;
+            animation: none !important;
+        }
+
+        .navbar-nav .nav-cta,
+        .navbar-nav .nav-cta:hover {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.55rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            text-transform: none;
+            letter-spacing: 0;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .navbar-nav .nav-cta-login {
+            background: transparent;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .navbar-nav .nav-cta-login:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 6px 18px rgba(4, 102, 200, 0.25);
+        }
+
+        .navbar-nav .nav-cta-register {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(4, 102, 200, 0.25);
+        }
+
+        .navbar-nav .nav-cta-register:hover {
+            background: #0353a4;
+            border-color: #0353a4;
+            color: var(--white);
+            box-shadow: 0 12px 30px rgba(4, 102, 200, 0.3);
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-nav .nav-cta {
+                width: 100%;
+            }
+
+            .navbar-nav .nav-item + .nav-item .nav-cta {
+                margin-top: 0.75rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(135deg, rgba(10, 25, 47, 0.9) 0%, rgba(4, 102, 200, 0.9) 100%), 
+                              url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(100, 255, 218, 0.1) 0%, transparent 50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(4, 102, 200, 0.3);
+        }
+
+        .btn-outline-primary {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: 0 auto;
+            margin-top: 0;
+            display: inline-block;
+            white-space: normal;
+            text-align: center;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(4, 102, 200, 0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+        }
+
+        .service-icon svg {
+            width: 42px;
+            height: 42px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .service-card .btn-primary {
+            padding: 10px 25px;
+            font-size: 0.95rem;
+            margin-top: auto;
+            align-self: center;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            background: var(--light-bg);
+        }
+
+        .feature-box {
+            background: var(--white);
+            padding: 35px 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            height: 100%;
+            text-align: center;
+        }
+
+        .feature-box:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .feature-text {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Trusted Partners Section */
+        .trusted-partners {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .trusted-partners .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .trusted-partners .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .trusted-partners .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin: 20px auto 0;
+            text-align: center;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .trusted-highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .trusted-highlight-tile {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .trusted-highlight-tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(4, 102, 200, 0.15);
+        }
+
+        .trusted-highlight-tile .highlight-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-size: 2.5rem;
+        }
+
+        .trusted-highlight-tile .highlight-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .trusted-highlight-tile .highlight-content p {
+            color: var(--text-light);
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer h5 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+        }
+
+        .footer p {
+            color: #cbd5e0;
+            line-height: 1.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .footer-social a[aria-label="Facebook"] {
+            color: #1877F2;
+        }
+
+        .footer-social a[aria-label="Twitter"] {
+            color: #1DA1F2;
+        }
+
+        .footer-social a[aria-label="LinkedIn"] {
+            color: #0077B5;
+        }
+
+        .footer-social a[aria-label="Instagram"] {
+            color: #E4405F;
+        }
+
+        .footer-social a[aria-label="GitHub"] {
+            color: #181717;
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px) scale(1.1);
+            opacity: 0.8;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .footer-links i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #cbd5e0;
+        }
+
+        .footer-bottom a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(4, 102, 200, 0.4);
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Global text alignment */
+        p { text-align: justify; }
+        .service-card p { text-align: justify; }
+        .feature-text { text-align: justify; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .trusted-highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-outline-primary {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Dropdown Menu */
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Skip to Main Content -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <strong>ACyberCloud</strong>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Services <span class="dropdown-caret" aria-hidden="true">▼</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                                <li><a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a></li>
+                                <li><a class="dropdown-item" href="cloud-services.html">Cloud Services</a></li>
+                                <li><a class="dropdown-item" href="ai-solutions.html">AI Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="solutions.html">Solutions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="case-studies.html">Case-studies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <a class="nav-cta nav-cta-login" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item mt-2 mt-lg-0 ms-lg-2">
+                            <a class="nav-cta nav-cta-register" href="register.html">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main id="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8" data-aos="fade-up">
+                        <h1>Secure Your Digital Future</h1>
+                        <p>Leading provider of cybersecurity, cloud services, and AI solutions. Protecting your business with cutting-edge technology and expert support.</p>
+                        <div class="hero-buttons">
+                            <a href="contact.html" class="btn btn-primary">Get Started</a>
+                            <a href="about.html" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Our Services</h2>
+                    <p>Comprehensive technology solutions to protect and grow your business in the digital age.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon">
+                            <i class="ri-shield-check-line"></i>
+                        </div>
+                        <h3>Cybersecurity</h3>
+                        <p>Advanced threat protection, vulnerability assessments, and 24/7 security monitoring to keep your data safe from cyber attacks.</p>
+                        <a href="cybersecurity.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 15.5a4 4 0 0 0 3.5 2h11a4 4 0 0 0 .5-7.98A5.5 5.5 0 0 0 11.6 4.5a4 4 0 0 0-8.1 4.75" />
+                                <path d="M12 16V8" />
+                                <path d="M9 11l3-3 3 3" />
+                            </svg>
+                        </div>
+                        <h3>Cloud Services</h3>
+                        <p>Scalable cloud infrastructure, migration services, and managed cloud solutions to optimize your business operations.</p>
+                        <a href="cloud-services.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                    
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon">
+                            <i class="ri-brain-line"></i>
+                        </div>
+                        <h3>AI Solutions</h3>
+                        <p>Custom AI implementations, machine learning models, and intelligent automation to transform your business processes.</p>
+                        <a href="ai-solutions.html" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section why-choose-us">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Why Choose Us</h2>
+                    <p>Experience the difference with our proven expertise and commitment to excellence.</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="ri-award-line"></i>
+                            </div>
+                            <h4 class="feature-title">Expert Team</h4>
+                            <p class="feature-text">Our certified professionals bring years of experience in cybersecurity, cloud computing, and artificial intelligence.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="ri-time-line"></i>
+                            </div>
+                            <h4 class="feature-title">24/7 Support</h4>
+                            <p class="feature-text">Round-the-clock monitoring and support to ensure your systems are always protected and running smoothly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-box">
+                            <div class="feature-icon">
+                                <i class="ri-shield-star-line"></i>
+                            </div>
+                            <h4 class="feature-title">Proven Results</h4>
+                            <p class="feature-text">Track record of successful implementations and satisfied clients across various industries worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted Partners -->
+        <section class="trusted-partners">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Trusted Partner Ecosystem</h2>
+                    <p>We join forces with global leaders to deliver resilient cybersecurity, cloud, and AI programs tailored to enterprise ambitions.</p>
+                </div>
+
+                <div class="trusted-highlights-grid">
+                    <div class="trusted-highlight-tile" data-aos="fade-up" data-aos-delay="100">
+                        <div class="highlight-icon">
+                            <i class="ri-shield-check-line"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <h3>Security Innovators</h3>
+                            <p>Joint SOC programs with vendors like CrowdStrike, Fortinet, and SentinelOne deliver 24/7 managed detection and response.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trusted-highlight-tile" data-aos="fade-up" data-aos-delay="200">
+                        <div class="highlight-icon">
+                            <i class="ri-cloud-line"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <h3>Cloud Platforms</h3>
+                            <p>Microsoft Azure, AWS, and Google Cloud partnerships enable compliant multi-cloud deployments across regulated industries.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="trusted-highlight-tile" data-aos="fade-up" data-aos-delay="300">
+                        <div class="highlight-icon">
+                            <i class="ri-cpu-line"></i>
+                        </div>
+                        <div class="highlight-content">
+                            <h3>AI &amp; Data</h3>
+                            <p>Collaborations with NVIDIA, Snowflake, and Databricks speed up AI model delivery and modern data platform initiatives.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>ACyberCloud</h5>
+                    <p>Leading provider of cybersecurity, cloud services, and AI solutions. Protecting your digital future with cutting-edge technology.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link social-facebook" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="social-link social-twitter" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" class="social-link social-linkedin" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" class="social-link social-instagram" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" class="social-link social-github" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="cloud-services.html">Cloud Services</a></li>
+                        <li><a href="ai-solutions.html">AI Solutions</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="ri-map-pin-line"></i> 91/5 Outer Ring Road, Bellandur, Bengaluru, Karnataka 560103, India</li>
+                        <li><i class="ri-phone-line"></i> <a href="tel:+919876543210">+91 98765 43210</a></li>
+                        <li><i class="ri-mail-line"></i> <a href="mailto:info@acybercloud.in">info@acybercloud.in</a></li>
+                        <li><i class="ri-time-line"></i> Mon-Fri: 9AM - 6PM IST</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        <p>&copy; 2025 ACyberCloud. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="privacy-policy.html" class="me-3">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+            }, 500);
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '#navbarNav') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        // Add active class to current page nav link
+        const currentLocation = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-link').forEach(link => {
+            if (link.getAttribute('href') === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

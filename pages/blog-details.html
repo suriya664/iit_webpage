@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details - ACyberCloud</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/icons/favicon.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <style>
+        .section { padding: 80px 0; }
+        .card { border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,.06); }
+        .blog-content p { text-align: justify; }
+        h1, h2, h3, h4 { text-align: center; }
+        #servicesDropdown::after {
+            content: '' !important;
+            font-size: 0.7rem;
+            margin-left: 0.35rem;
+            display: inline-block;
+            vertical-align: middle;
+            transition: none !important;
+        }
+
+        #servicesDropdown:hover::after,
+        #servicesDropdown:focus::after,
+        #servicesDropdown.show::after,
+        #servicesDropdown[aria-expanded="true"]::after {
+            content: '▼' !important;
+            transform: none !important;
+        }
+
+        .dropdown-menu[aria-labelledby="servicesDropdown"] {
+            animation: none !important;
+            transition: none !important;
+        }
+
+        header,
+        header * {
+            transition: none !important;
+            animation: none !important;
+        }
+
+        .navbar-nav .nav-link::after,
+        .navbar-nav .nav-link:hover::after {
+            width: 0 !important;
+        }
+
+        .navbar-nav .nav-cta,
+        .navbar-nav .nav-cta:hover {
+            box-shadow: none !important;
+            transform: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="preloader"><div class="preloader-spinner"></div></div>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><strong>ACyberCloud</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                                <li><a class="dropdown-item" href="cybersecurity.html">Cybersecurity</a></li>
+                                <li><a class="dropdown-item" href="cloud-services.html">Cloud Services</a></li>
+                                <li><a class="dropdown-item" href="ai-solutions.html">AI Solutions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="solutions.html">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3"><a class="nav-cta nav-cta-login" href="login.html">Login</a></li>
+                        <li class="nav-item mt-2 mt-lg-0 ms-lg-2"><a class="nav-cta nav-cta-register" href="register.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section" style="padding-top: 120px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <article class="card">
+                        <div class="card-body p-4">
+                            <div class="blog-meta mb-3">January 15, 2024 | Cybersecurity</div>
+                            <h1 class="mb-4">Top 10 Cybersecurity Threats in 2024</h1>
+                            <img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop" alt="Blog Image" class="img-fluid rounded mb-4">
+                            <div class="blog-content">
+                                <p class="text-justify">As we navigate through 2024, the cybersecurity landscape continues to evolve with new threats emerging regularly. Businesses must stay vigilant and adapt their security strategies to protect against these evolving risks.</p>
+                                <p class="text-justify">In this comprehensive guide, we'll explore the top 10 cybersecurity threats that organizations should be aware of and how to defend against them effectively.</p>
+                                <h3 class="mt-4 mb-3">1. Ransomware Attacks</h3>
+                                <p class="text-justify">Ransomware remains one of the most significant threats, with attackers using increasingly sophisticated methods to encrypt data and demand payment. Organizations must implement robust backup strategies and employee training programs.</p>
+                                <h3 class="mt-4 mb-3">2. Phishing Campaigns</h3>
+                                <p class="text-justify">Phishing attacks continue to be a primary vector for data breaches. Advanced phishing techniques, including AI-generated content, make these attacks more convincing and harder to detect.</p>
+                                <p class="text-justify">Regular security awareness training and advanced email filtering solutions are essential to combat these threats effectively.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    <h5>ACyberCloud</h5>
+                    <p>Leading provider of cybersecurity, cloud services, and AI solutions.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="ri-github-fill"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="solutions.html">Solutions</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                        <li><a href="cloud-services.html">Cloud Services</a></li>
+                        <li><a href="ai-solutions.html">AI Solutions</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="ri-map-pin-line"></i> 123 Tech Street, Cyber City</li>
+                        <li><i class="ri-phone-line"></i> +1 (555) 123-4567</li>
+                        <li><i class="ri-mail-line"></i> info@acybercloud.com</li>
+                        <li><i class="ri-time-line"></i> Mon-Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        <p>&copy; 2025 ACyberCloud. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="privacy-policy.html" class="me-3">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top"><i class="ri-arrow-up-line"></i></div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/plugins.js"></script>
+    
+</body>
+</html>
+

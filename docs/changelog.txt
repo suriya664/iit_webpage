@@ -1,0 +1,38 @@
+============================================
+CHANGELOG - ACYBERCLOUD TEMPLATE
+============================================
+
+Version 1.0.0 - January 2024
+----------------------------
+Initial Release
+
+Features:
+- Complete template structure
+- 20+ HTML pages
+- Responsive design
+- Dark mode support
+- RTL support
+- Animation effects
+- Contact forms
+- Blog system
+- Pricing tables
+- FAQ accordion
+- Case studies section
+- Service pages
+- Login/Register pages
+- Dashboard layout
+- 404 error page
+- Privacy policy page
+
+Technical:
+- Bootstrap 5 integration
+- jQuery integration
+- AOS animations
+- Remix Icons
+- Font Awesome
+- Custom CSS framework
+- JavaScript plugins
+- AJAX handlers
+
+============================================
+
